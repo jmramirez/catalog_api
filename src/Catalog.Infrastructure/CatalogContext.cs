@@ -1,5 +1,6 @@
 ﻿using Catalog.Domain.Entities;
 using Catalog.Domain.Repositories;
+using Catalog.Infrastructure.SchemaDefinitions;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,13 @@ namespace Catalog.Infrastructure
         public DbSet<Item> Items { get; set; }
 
         public CatalogContext(DbContextOptions options) : base(options) { }
-        protected override void OnModelCreating(ModelBuilder modelBuilder) { }
+        protected override void OnModelCreating(ModelBuilder modelBuilder) 
+        {
+            modelBuilder.ApplyConfiguration(new ItemEntitySchemaDefinition());
+            modelBuilder.ApplyConfiguration(new ArtistEntitySchemaDefinition());
+            modelBuilder.ApplyConfiguration(new GenreEntitySchemaDefinition());
+            base.OnModelCreating(modelBuilder);
+        }
 
         public async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default(CancellationToken))
         {

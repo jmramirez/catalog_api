@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Domain", "src\Catal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Infrastructure", "src\Catalog.Infrastructure\Catalog.Infrastructure.csproj", "{C4BFE9E9-C1BC-44FB-9075-4C1739D108D0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{549B706F-E056-4756-98A7-52DA96A45EA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Infrastructure.Tests", "tests\Catalog.Infrastructure.Tests\Catalog.Infrastructure.Tests.csproj", "{80DFEC1C-002C-45E8-BB31-4623D15285C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,10 +64,23 @@ Global
 		{C4BFE9E9-C1BC-44FB-9075-4C1739D108D0}.Release|x64.Build.0 = Release|Any CPU
 		{C4BFE9E9-C1BC-44FB-9075-4C1739D108D0}.Release|x86.ActiveCfg = Release|Any CPU
 		{C4BFE9E9-C1BC-44FB-9075-4C1739D108D0}.Release|x86.Build.0 = Release|Any CPU
+		{80DFEC1C-002C-45E8-BB31-4623D15285C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80DFEC1C-002C-45E8-BB31-4623D15285C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80DFEC1C-002C-45E8-BB31-4623D15285C4}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{80DFEC1C-002C-45E8-BB31-4623D15285C4}.Debug|x64.Build.0 = Debug|Any CPU
+		{80DFEC1C-002C-45E8-BB31-4623D15285C4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{80DFEC1C-002C-45E8-BB31-4623D15285C4}.Debug|x86.Build.0 = Debug|Any CPU
+		{80DFEC1C-002C-45E8-BB31-4623D15285C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80DFEC1C-002C-45E8-BB31-4623D15285C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80DFEC1C-002C-45E8-BB31-4623D15285C4}.Release|x64.ActiveCfg = Release|Any CPU
+		{80DFEC1C-002C-45E8-BB31-4623D15285C4}.Release|x64.Build.0 = Release|Any CPU
+		{80DFEC1C-002C-45E8-BB31-4623D15285C4}.Release|x86.ActiveCfg = Release|Any CPU
+		{80DFEC1C-002C-45E8-BB31-4623D15285C4}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{AF023733-637A-4C63-9AE9-1CE2B7787695} = {780B97C7-07CD-48EF-B157-A5AFB6C13FE1}
 		{DEB61F04-5CEB-4473-BC1C-4247D28249F8} = {780B97C7-07CD-48EF-B157-A5AFB6C13FE1}
 		{C4BFE9E9-C1BC-44FB-9075-4C1739D108D0} = {780B97C7-07CD-48EF-B157-A5AFB6C13FE1}
+		{80DFEC1C-002C-45E8-BB31-4623D15285C4} = {549B706F-E056-4756-98A7-52DA96A45EA5}
 	EndGlobalSection
 EndGlobal
