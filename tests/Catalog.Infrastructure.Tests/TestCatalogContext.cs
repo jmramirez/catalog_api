@@ -19,8 +19,8 @@ namespace Catalog.Infrastructure.Tests
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Seed<Artist>("./Data/artist.json");
-            modelBuilder.Seed<Artist>("./Data/genre.json");
-            modelBuilder.Seed<Artist>("./Data/item.json");
+            modelBuilder.Seed<Genre>("./Data/genre.json");
+            modelBuilder.Seed<Item>("./Data/item.json");
         }
     }
 }
