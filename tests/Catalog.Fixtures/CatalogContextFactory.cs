@@ -2,8 +2,6 @@
 using Catalog.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Catalog.Fixtures
 {

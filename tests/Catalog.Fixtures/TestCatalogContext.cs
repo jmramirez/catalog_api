@@ -1,6 +1,6 @@
 ﻿using Catalog.Domain.Entities;
+using Catalog.Fixtures.Extensions;
 using Catalog.Infrastructure;
-using Catalog.Infrastructure.Tests.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace Catalog.Fixtures

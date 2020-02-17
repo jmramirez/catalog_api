@@ -1,11 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
-namespace Catalog.Infrastructure.Tests.Extensions
+
+namespace Catalog.Fixtures.Extensions
 {
     public static class ModelBuilderExtensions
     {

@@ -18,20 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Data\artist.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Data\genre.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Data\item.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <ProjectReference Include="..\Catalog.Fixtures\Catalog.Fixtures.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\Catalog.InfrastructureSP\Catalog.InfrastructureSP.csproj" />
-    <ProjectReference Include="..\..\src\Catalog.Infrastructure\Catalog.Infrastructure.csproj" />
-  </ItemGroup>
 
 </Project>
