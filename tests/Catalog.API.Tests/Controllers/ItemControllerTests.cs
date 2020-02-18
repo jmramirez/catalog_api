@@ -1,10 +1,12 @@
-﻿using Catalog.Domain.Entities;
+﻿using Catalog.API.ResponseModels;
+using Catalog.Domain.Entities;
 using Catalog.Domain.Requests.Items;
 using Catalog.Fixtures;
 using Newtonsoft.Json;
 using Shouldly;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +30,25 @@ namespace Catalog.API.Tests.Controllers
             var client = _factory.CreateClient();
             var response = await client.GetAsync(url);
             response.EnsureSuccessStatusCode();
+        }
+
+
+        [Theory]
+        [InlineData("/api/items/?pageSize=1&pageIndex=0",1,0)]
+        [InlineData("/api/items/?pageSize=2&pageIndex=0", 2, 0)]
+        [InlineData("/api/items/?pageSize=1&pageIndex=1", 1, 1)]
+        public async Task get_should_return_paginated_data(string url,int pageSize,int pageIndex)
+        {
+            var client = _factory.CreateClient();
+            var response = await client.GetAsync(url);
+            response.EnsureSuccessStatusCode();
+
+            var responseContent = await response.Content.ReadAsStringAsync();
+            var responseEntity = JsonConvert.DeserializeObject<PaginatedItemsResponseModel<ItemResponse>>(responseContent);
+
+            responseEntity.PageIndex.ShouldBe(pageIndex);
+            responseEntity.PageSize.ShouldBe(pageSize);
+            responseEntity.Data.Count().ShouldBe(pageSize);
         }
 
         [Fact]

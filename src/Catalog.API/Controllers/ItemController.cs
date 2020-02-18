@@ -1,8 +1,10 @@
 ﻿using Catalog.API.Filters;
+using Catalog.API.ResponseModels;
 using Catalog.Domain.Requests.Items;
 using Catalog.Domain.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Catalog.API.Controllers
@@ -19,10 +21,19 @@ namespace Catalog.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get(int pageSize = 10, int pageIndex = 0)
         {
             var result = await _itemService.GetItemsAsync();
-            return Ok(result);
+            var totalItems = result.Count();
+
+            var itemsOnPage = result
+                .OrderBy(c => c.Name)
+                .Skip(pageSize * pageIndex)
+                .Take(pageSize);
+
+            var model = new PaginatedItemsResponseModel<ItemResponse>(pageIndex, pageSize, totalItems, itemsOnPage);
+
+            return Ok(model);
         }
 
         [HttpGet("{id:guid}")]
