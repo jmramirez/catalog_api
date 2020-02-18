@@ -1,6 +1,7 @@
 using Catalog.API.Extensions;
 using Catalog.Domain.Extensions;
 using Catalog.Domain.Repositories;
+using Catalog.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -23,7 +24,7 @@ namespace Catalog.API
         {
             services.AddControllers();
             services.AddCatalogContext(Configuration.GetSection("DataSource:ConnectionString").Value);
-            services.AddScoped<IItemRepository, IItemRepository>()
+            services.AddScoped<IItemRepository, ItemRepository>()
                 .AddMappers()
                 .AddServices()
                 .AddControllers()
