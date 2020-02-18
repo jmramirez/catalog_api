@@ -14,3 +14,4 @@ namespace Catalog.Domain.Services
         Task<ItemResponse> EditItemAsync(EditItemRequest request);
     }
 }
+

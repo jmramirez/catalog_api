@@ -18,7 +18,9 @@ namespace Catalog.Domain.Extensions
 
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
-            services.AddScoped<IItemService, ItemService>();
+            services.AddScoped<IItemService, ItemService>()
+                .AddScoped<IArtistService, ArtistService>()
+                .AddScoped<IGenreService, GenreService>();
             return services;
         }
 
