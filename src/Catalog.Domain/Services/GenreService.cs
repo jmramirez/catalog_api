@@ -27,7 +27,7 @@ namespace Catalog.Domain.Services
 
         public async Task<GenreResponse> AddGenreAsync(AddGenreRequest request)
         {
-            var item = new Entities.Genre { GenreDescription = request.GenreDescription }:
+            var item = new Entities.Genre { GenreDescription = request.GenreDescription };
 
             var result = _genreRepository.Add(item);
             await _genreRepository.UnitOfWork.SaveChangesAsync();
