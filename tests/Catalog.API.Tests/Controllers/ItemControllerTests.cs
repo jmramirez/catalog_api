@@ -4,7 +4,9 @@ using Catalog.Domain.Requests.Items;
 using Catalog.Fixtures;
 using Newtonsoft.Json;
 using Shouldly;
+using System;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -118,6 +120,28 @@ namespace Catalog.API.Tests.Controllers
             responseEntity.PictureUri.ShouldBe(request.PictureUri);
             responseEntity.GenreId.ShouldBe(request.GenreId);
             responseEntity.ArtistId.ShouldBe(request.ArtistId);
+        }
+
+        [Theory]
+        [LoadData("item")]
+        public async Task delete_should_returns_no_content_when_called_with_right_id(DeleteItemRequest
+        request)
+        {
+            var client = _factory.CreateClient();
+
+            var response = await client.DeleteAsync($"/api/items/{request.Id}");
+
+            response.StatusCode.ShouldBe(HttpStatusCode.NoContent);
+        }
+
+        [Fact]
+        public async Task delete_should_returns_not_found_when_called_with_not_existing_id()
+        {
+            var client = _factory.CreateClient();
+
+            var response = await client.DeleteAsync($"/api/items/{Guid.NewGuid()}");
+
+            response.StatusCode.ShouldBe(HttpStatusCode.NotFound);
         }
     }
 }

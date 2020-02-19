@@ -1,4 +1,5 @@
-﻿using Catalog.Domain.Requests.Items;
+﻿using Catalog.API.Exceptions;
+using Catalog.Domain.Requests.Items;
 using Catalog.Domain.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
@@ -34,7 +35,9 @@ namespace Catalog.API.Filters
 
                 if(result == null)
                 {
-                    context.Result = new NotFoundObjectResult($"Item with id {id} not exist.");
+                    context.Result = new NotFoundObjectResult(
+                        new JsonErrorPayload { DetailedMessage = $"Item with id {id} not exist." });
+                    return;
                 }
 
                 await next();
