@@ -25,6 +25,8 @@ namespace Catalog.API
             services.AddControllers();
             services.AddCatalogContext(Configuration.GetSection("DataSource:ConnectionString").Value);
             services.AddScoped<IItemRepository, ItemRepository>()
+                .AddScoped<IArtistRepository,ArtistRepository>()
+                .AddScoped<IGenreRepository,GenreRepository>()
                 .AddMappers()
                 .AddServices()
                 .AddControllers()

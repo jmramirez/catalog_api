@@ -8,9 +8,9 @@ using System.Net;
 
 namespace Catalog.API.Filters
 {
-    public class JsonExecptionAttribute : TypeFilterAttribute
+    public class JsonExceptionAttribute : TypeFilterAttribute
     {
-        public JsonExecptionAttribute() : base(typeof(HttpCustomExceptionFilterImpl)) { }
+        public JsonExceptionAttribute() : base(typeof(HttpCustomExceptionFilterImpl)) { }
 
         private class HttpCustomExceptionFilterImpl : IExceptionFilter
         {
