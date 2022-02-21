@@ -11,6 +11,8 @@ public class Item
     public DateTimeOffset ReleaseDate { get; set; }
     public string Format { get; set; } = String.Empty;
     public int AvailableStock { get; set; }
+    public Guid GenreId { get; set; }
     public Genre Genre { get; set; }
+    public Guid ArtistId { get; set; }
     public Artist Artist { get; set; }
 }
