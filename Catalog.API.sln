@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5F94B03B-6EA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.API", "src\Catalog.API\Catalog.API.csproj", "{FB95F8A5-13C5-4C76-92AD-393327B5CAA3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Domain", "src\Catalog.Domain\Catalog.Domain.csproj", "{D1941D9C-E17A-4ADC-AADA-81E28E288E0F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,8 +22,13 @@ Global
 		{FB95F8A5-13C5-4C76-92AD-393327B5CAA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB95F8A5-13C5-4C76-92AD-393327B5CAA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB95F8A5-13C5-4C76-92AD-393327B5CAA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1941D9C-E17A-4ADC-AADA-81E28E288E0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1941D9C-E17A-4ADC-AADA-81E28E288E0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1941D9C-E17A-4ADC-AADA-81E28E288E0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1941D9C-E17A-4ADC-AADA-81E28E288E0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FB95F8A5-13C5-4C76-92AD-393327B5CAA3} = {5F94B03B-6EA2-492B-AC0D-44BE5AF3C8C5}
+		{D1941D9C-E17A-4ADC-AADA-81E28E288E0F} = {5F94B03B-6EA2-492B-AC0D-44BE5AF3C8C5}
 	EndGlobalSection
 EndGlobal
