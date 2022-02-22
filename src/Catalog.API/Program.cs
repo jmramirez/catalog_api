@@ -1,10 +1,19 @@
 using Catalog.API.Extensions;
+using Catalog.Domain.Extensions;
+using Catalog.Domain.Repositories;
+using Catalog.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddCatalogContext(builder.Configuration.GetSection("DataSource:ConnectionString").Value);
-builder.Services.AddControllers();
+builder.Services
+    .AddCatalogContext(builder.Configuration.GetSection("DataSource:ConnectionString").Value)
+    .AddScoped<IItemRepository, ItemRepository>()
+    .AddMappers()
+    .AddServices()
+    .AddControllers()
+    .AddValidation();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
